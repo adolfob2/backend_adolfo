@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "5c350aae-a458-4b62-bf01-e4dac62a8026",
+		"name": "ecommerce api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47096421",
+		"_collection_link": "https://science-engineer-31626100-839653.postman.co/workspace/My-Workspace~d109d5b2-b58f-4442-a77c-38626449e295/collection/47096421-5c350aae-a458-4b62-bf01-e4dac62a8026?action=share&source=collection_link&creator=47096421"
+	},
+	"item": [
+		{
+			"name": "Modulo Login",
+			"item": [
+				{
+					"name": "usuariologin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/seguridad/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"seguridad",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuariorefreshtoken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/seguridad/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"seguridad",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo Catalogo",
+			"item": [
+				{
+					"name": "obtenercatalogo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE2OTcsImV4cCI6MTc1NjA1MTc1N30.WIB8aJJOBUTL9XZsYgTqp24g7G-0DEVAJug2nyASTD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenercatalogoid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE2OTcsImV4cCI6MTc1NjA1MTc1N30.WIB8aJJOBUTL9XZsYgTqp24g7G-0DEVAJug2nyASTD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crearproducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE4MjUsImV4cCI6MTc1NjA1MTg4NX0.6ffzbN6JAiZFFyxr409ZRNyRzTqVT8PR6ZLO2yY4fRE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Parlante Bluetooth 2\",\r\n  \"precio\": 550,\r\n  \"stock\": 10,\r\n  \"id_categoria\": 3,\r\n  \"activo\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificaproducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE4MjUsImV4cCI6MTc1NjA1MTg4NX0.6ffzbN6JAiZFFyxr409ZRNyRzTqVT8PR6ZLO2yY4fRE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"precio\": 400, \r\n    \"stock\": 6\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarlogproducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE5MDQsImV4cCI6MTc1NjA1MTk2NH0.e2-fdRiloFmkFpOCRiqlDi9Iw_s0uDL8N-CmHpiCvLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo Archivo",
+			"item": [
+				{
+					"name": "subirarchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIzNDEsImV4cCI6MTc1NjA1MjQwMX0.1heaJ1oE0oDUtm0aHfqaizPLcepPtebaxuMmHugt1aY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/C:/Users/adolf/OneDrive/Escritorio/Smartphone.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/archivos/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"archivos",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subirarchivoproducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIzNDEsImV4cCI6MTc1NjA1MjQwMX0.1heaJ1oE0oDUtm0aHfqaizPLcepPtebaxuMmHugt1aY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/C:/Users/adolf/OneDrive/Escritorio/Smartphone.jpg"
+								},
+								{
+									"key": "id",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/archivos/upload-producto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"archivos",
+								"upload-producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "descargararchivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTI0NzcsImV4cCI6MTc1NjA1MjUzN30.qbtunt-5qcdYW90zCh55Tgios656heI55kErkaf8DM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/catalogo/download/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"catalogo",
+								"download",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subirmemoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/C:/Users/adolf/OneDrive/Escritorio/Smartphone.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/archivos/uploadmem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"archivos",
+								"uploadmem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "copiararchivo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carpeta\":\"./archivos\",\r\n    \"filename\":\"sentineldata.txt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/archivos/copiar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"archivos",
+								"copiar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo Pedido",
+			"item": [
+				{
+					"name": "Busquedapedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE5MDQsImV4cCI6MTc1NjA1MTk2NH0.e2-fdRiloFmkFpOCRiqlDi9Iw_s0uDL8N-CmHpiCvLM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busquedapedidoid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE5NzQsImV4cCI6MTc1NjA1MjAzNH0.HqRaHIDPbBkYnWGn3nK1Pe0Vua-EQKPngxAzXUWQvAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/pedidos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crearpedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTE5NzQsImV4cCI6MTc1NjA1MjAzNH0.HqRaHIDPbBkYnWGn3nK1Pe0Vua-EQKPngxAzXUWQvAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_usuario\": 3,\r\n  \"items\": [\r\n    { \"id_producto\": 2, \"cantidad\": 2 },\r\n    { \"id_producto\": 5, \"cantidad\": 1 }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificarpedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIwNDMsImV4cCI6MTc1NjA1MjEwM30.SC7lPoCX8ODEalFaen6eQxoyLwG3aTWA9-BGMqcJMFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"items\": [\r\n    { \"id_producto\": 2, \"cantidad\": 1 },\r\n    { \"id_producto\": 6, \"cantidad\": 4 }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/pedidos/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminarpedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIwNDMsImV4cCI6MTc1NjA1MjEwM30.SC7lPoCX8ODEalFaen6eQxoyLwG3aTWA9-BGMqcJMFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/pedidos/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo Usuario",
+			"item": [
+				{
+					"name": "Busquedausuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIxMTIsImV4cCI6MTc1NjA1MjE3Mn0.DXPx0KnQy7ZW7wMVw0f_RL7jTWrFOdmcxM7I8Waaq2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busquedausuariosid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIxMTIsImV4cCI6MTc1NjA1MjE3Mn0.DXPx0KnQy7ZW7wMVw0f_RL7jTWrFOdmcxM7I8Waaq2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/usuarios/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crearnuevousuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIxMTIsImV4cCI6MTc1NjA1MjE3Mn0.DXPx0KnQy7ZW7wMVw0f_RL7jTWrFOdmcxM7I8Waaq2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Lauras Díaz 3\",\r\n  \"email\": \"laura4@example.com\",\r\n  \"password\": \"pass999\",\r\n  \"rol\": \"CLIENTE\",\r\n  \"id_tipodocumento\": 1,\r\n  \"numintentos\": 0,\r\n  \"fingreso\": 1,\r\n  \"otp\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificarusuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIyMDksImV4cCI6MTc1NjA1MjI2OX0.S2PDYX2rm5QZ-gYANbJ1CVrJZi3Fy0Jng8tQxYd18zk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Laura D.\",\r\n  \"email\": \"laura9@example.com\",\r\n  \"password\": \"pass999\",\r\n  \"numintentos\": 0,\r\n  \"fingreso\": 1,\r\n  \"otp\": null,\r\n  \"rol\": \"CLIENTE\",\r\n  \"id_tipodocumento\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/usuarios/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminarusuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZXJzb25hIjo3LCJlbWFpbCI6InBlZHJvQGV4YW1wbGUuY29tIiwicm9sIjoiQURNSU4iLCJpYXQiOjE3NTYwNTIyMDksImV4cCI6MTc1NjA1MjI2OX0.S2PDYX2rm5QZ-gYANbJ1CVrJZi3Fy0Jng8tQxYd18zk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/usuarios/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

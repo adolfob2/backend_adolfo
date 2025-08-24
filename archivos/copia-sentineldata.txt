@@ -1,0 +1,138 @@
+{
+    "soafullsabiooutput": {
+        "InfBas": {
+            "TDoc": "D",
+            "NDoc": "75153668",
+            "RelTDoc": "R",
+            "RelNDoc": "10751536688",
+            "RazSoc": "VALER AYALA RODRIGO JESUS",
+            "NomCom": "",
+            "TipCon": "PERSONA NATURAL SIN NEGOCIO",
+            "IniAct": "2023-04-25",
+            "ActEco": "9609 - OTRAS ACTIVIDADES DE SERVICIOS PERSONALES N.C.P.",
+            "FchInsRRPP": "0000-00-00",
+            "NumParReg": "",
+            "Fol": "",
+            "Asi": "",
+            "AgeRet": "N",
+            "ApeMat": "AYALA",
+            "ApePat": "VALER",
+            "Nom": "RODRIGO JESUS",
+            "DigVer": "",
+            "Sex": "MASCULINO",
+            "FecNac": "2003-06-01",
+            "EstCon": "ACTIVO",
+            "EstDom": "HABIDO",
+            "EstDomic": "00",
+            "CondDomic": "00"
+        },
+        "InfGen": {
+            "Direcc": [
+                {
+                    "Direccion": "- - - - - -",
+                    "Fuente": "SUNAT - DOMICILIO FISCAL"
+                }
+            ]
+        },
+        "ConRap": {
+            "Resumen_ConRap": {
+                "Semaforos": "GGGGGGGGGGGGGGGGGGGGGGGG",
+                "Nota": "0.0000",
+                "NroBancos": "0",
+                "SemaActual": "3",
+                "SemaPrevio": "3",
+                "SemaPeorMejor": "3",
+                "FechaProceso": "2025-03-31",
+                "DeudaTotal": "0.00",
+                "Calificativo": " NOR   0% CPP   0% DEF   0% DUD   0% PER   0%",
+                "DeudaTributaria": "0.00",
+                "DeudaLaboral": "0.00",
+                "DeudaImpaga": "0.00",
+                "DeudaProtestos": "0.00",
+                "DeudaSBS": "0.00"
+            }
+        },
+        "AvalCod": {},
+        "HecImp": {},
+        "Graf": {},
+        "Sabio": {
+            "Dictamen": "RECHAZAR",
+            "Motivos": [
+                {
+                    "Motivos": "R: Puntaje de Score igual a 557"
+                },
+                {
+                    "Motivos": "No cumple con todas las reglas de evaluación."
+                }
+            ],
+            "ScoreSabio": 557,
+            "NivelRiesgo": "Puntaje Bajo",
+            "CapacidadPago": "S/ 510  -  S/ 600",
+            "EstimadorIngreso": "S/ [ 0 - 999 ]",
+            "EstimadorCuota": "0.00",
+            "Bancarizado": "NO",
+            "ValorCuotaMax": "70.91",
+            "MtoAprobadoMax": "542.46",
+            "MtoAprobado": "542.46",
+            "PlazoMinimo": "9 Cuotas"
+        },
+        "VarPer": {
+            "DniEstado": "1",
+            "FlagCastigo24M": "0",
+            "FlagCastigo12M": "0",
+            "FactorGastosPersonales": "46.90",
+            "GastosPersonales": "413.19",
+            "GastosFinancieros": "326.00",
+            "NroMesRCC": 0,
+            "Flag100NormalU12M": "0",
+            "Flag100NormalUlt6M": "0",
+            "Flag100NormalUlt3M": "0",
+            "AClasSBS": "000000000000",
+            "LineaDisponible": "0.00",
+            "SemaforoVerde13M": "0",
+            "SemaforoROJO2M": "0",
+            "Edad": 22,
+            "TieneTarjeta": "0",
+            "SEM_RB": "0",
+            "SEM_RM": "0",
+            "SEM_RA": "0",
+            "SEM_RMA": "0",
+            "SEM_NB_RB": "1",
+            "SEM_NB_RM": "1",
+            "SEM_NB_RA": "1",
+            "DeudaTotal": "0.00",
+            "DeudaTC": "0.00",
+            "Prestamos": "0.00",
+            "Microempresa": "0.00",
+            "Hipotecario": "0.00",
+            "Vehicular": "0.00",
+            "LNU_SSFF": "0.00",
+            "LTC_SSFF": "0.00",
+            "PorcUtilizaLTC": 0.00,
+            "MaxLineasRCC": "0.00",
+            "MinLineasRCC": "0.00",
+            "NroEntidadesSF": 0,
+            "NroEntAcreedorasFueraSF": 0,
+            "EntidadesConSaldo": 0,
+            "EntidadesLineaTC": 0,
+            "EntidadesSaldoTC": 0,
+            "FlagBCP": 0,
+            "FlagBBVA": 0,
+            "FlagInterbank": 0,
+            "FlagScotia": 0,
+            "FlagBanBif": 0,
+            "FlagBN": 0,
+            "FlagMiBanco": 0,
+            "FlagPichincha": 0,
+            "FlagBF": 0,
+            "FlagRipley": 0,
+            "FlagCajaArequipa": 0,
+            "FlagCajaHuancayo": 0,
+            "FlagOH": 0,
+            "FlagCrediScotia": 0,
+            "FlagEfectiva": 0,
+            "FlagCompartamos": 0
+        }
+    },
+    "CodigoWS": "0"
+}
