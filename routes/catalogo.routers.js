@@ -12,6 +12,8 @@ router.get("/download/:id", authMiddleware(), ccatalogo.download); // cualquier 
 router.post("/upload", authMiddleware(), ccatalogo.upload);        // cualquier usuario logueado
 router.post("/reporte", ccatalogo.getReporte);   
 
+// ✅ NUEVA RUTA
+router.get('/categorias', ccatalogo.getCategorias);
 
 router.get('/', ccatalogo.getAll);
 router.get('/:id', ccatalogo.getById);

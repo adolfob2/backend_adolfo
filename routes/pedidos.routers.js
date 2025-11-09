@@ -25,18 +25,10 @@ import { authMiddleware } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-// Solo ADMIN ve todos los pedidos
 router.get("/", authMiddleware(["ADMIN"]), cpedidos.getAll);
-
-// Ver un pedido: ADMIN o el dueño del pedido (ver helper abajo)
-router.get("/:id", authMiddleware(["ADMIN","CLIENTE"]), cpedidos.getById);
-
-// Crear pedido: cualquier usuario logueado (CLIENTE o ADMIN)
-router.post("/", authMiddleware(["CLIENTE","ADMIN"]), cpedidos.create);
-
-// Opcional: restringe update/delete (ADMIN o dueño, según tu regla)
-router.put("/:id", authMiddleware(["ADMIN","CLIENTE"]), cpedidos.update);
-router.delete("/:id", authMiddleware(["ADMIN","CLIENTE"]), cpedidos.deletes);
+router.get("/:id", authMiddleware(["ADMIN", "CLIENTE"]), cpedidos.getById);
+router.post("/", authMiddleware(["CLIENTE", "ADMIN"]), cpedidos.create);
+router.put("/:id", authMiddleware(["ADMIN", "CLIENTE"]), cpedidos.update);
+router.delete("/:id", authMiddleware(["ADMIN", "CLIENTE"]), cpedidos.deletes);
 
 export default router;
-

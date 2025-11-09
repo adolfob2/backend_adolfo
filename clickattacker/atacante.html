@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Página atacante</title>
+<style>
+  .frame-wrap{width:700px;height:220px;border:2px dashed #00796b;position:relative;overflow:hidden;}
+  iframe{position:absolute;width:1000px;height:600px;top:-150px;left:-120px;opacity:0.001;border:none;}
+  .fake-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 20px;background:#ff9800;color:#fff;border-radius:6px;cursor:pointer;z-index:1;}
+</style>
+</head>
+<body>
+  <h2>Página Atacante</h2>
+  <div class="frame-wrap">
+    <iframe src="http://localhost:4001/target_vulnerable.html"></iframe>
+    <button class="fake-btn">¡Haz clic para reclamar premio!</button>
+  </div>
+  <p>Abre DevTools → Console/Network para ver bloqueo.</p>
+</body>
+</html>

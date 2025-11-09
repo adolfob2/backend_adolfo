@@ -4,6 +4,7 @@
 import * as scatalogo from "../services/catalogo.services.js";
 import * as sfile from "../services/file.service.js";
 import path from "path";
+import sanitizeHtml from 'sanitize-html';
 
 export const getAll = async function(req, res) {
     console.log("------------controller------------");
@@ -30,12 +31,16 @@ export const getById = async function (req, res) {
 
 
 export const create = async function(req, res) {
-    const objProducto=req.body;
+    const objProducto = req.body;
     console.log(objProducto);
     console.log(req.user);
 
+    // --- SANITIZACIÓN: quitar etiquetas HTML / scripts ---
+    objProducto.nombre = sanitizeHtml(objProducto.nombre || '', { allowedTags: [], allowedAttributes: {} });
+    objProducto.descripcion = sanitizeHtml(objProducto.descripcion || '', { allowedTags: [], allowedAttributes: {} });
+
     try{
-        let id= await scatalogo.create(objProducto);
+        let id = await scatalogo.create(objProducto);
         console.log("... despues de scatalogo.create()");
         res.json( {"id":id} );
     }catch(error){
@@ -43,10 +48,16 @@ export const create = async function(req, res) {
     };
 };
 
+
 export const update = async function(req, res) {
     console.log("------------controller------------");
-    const objProducto=req.body;
+    const objProducto = req.body;
     console.log(objProducto);
+
+    // --- SANITIZACIÓN: quitar etiquetas HTML / scripts (si vienen campos textuales) ---
+    objProducto.nombre = sanitizeHtml(objProducto.nombre || '', { allowedTags: [], allowedAttributes: {} });
+    objProducto.descripcion = sanitizeHtml(objProducto.descripcion || '', { allowedTags: [], allowedAttributes: {} });
+
     await scatalogo.update(req.params.id, objProducto)
     .then(numRegistros => {
         console.log("... despues de scatalogo.update()");
@@ -56,6 +67,7 @@ export const update = async function(req, res) {
         res.status(500).json({"error":"Error actualizando registros"});
     });
 };
+
 
 export const deletes = async function(req, res) {
     await scatalogo.deletes(req.params.id)
@@ -105,6 +117,20 @@ export const download = async (req, res) => {
     res.status(500).json({ error: "Error descargando archivo" });
   }
 };
+
+// NUEVO ENDPOINT: obtener todas las categorías
+import pool from "../config/db.js"; // asegúrate de que el path sea correcto según tu proyecto
+
+export const getCategorias = async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT id, nombre FROM categoria ORDER BY id");
+    res.json(rows);
+  } catch (error) {
+    console.error("Error al obtener categorías:", error);
+    res.status(500).json({ error: "Error al obtener categorías" });
+  }
+};
+
 
 // controllers/catalogo.controller.js
 /*import * as scatalogo from "../services/catalogo.services.js";

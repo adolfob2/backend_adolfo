@@ -24,20 +24,20 @@ Producto.belongsTo(Categoria, { foreignKey: 'id_categoria', as: 'categoria' });
 export const getAll = async () => {
   const results = await Producto.findAll({
     include: [{ model: Categoria, as: 'categoria', attributes: ['id', 'nombre'] }],
-    where: { activo: true },
+    where: { activo: 1 }, // 👈 CAMBIO aquí (de true → 1)
   });
-  // devolvemos tal cual el include, como en clase:
   return results.map(r => r.toJSON());
 };
+
 
 export const getById = async (id) => {
   const results = await Producto.findAll({
     include: [{ model: Categoria, as: 'categoria', attributes: ['id', 'nombre'] }],
-    where: { activo: true, id },
+    where: { activo: 1, id },
   });
-  // idem: objeto con categoria anidada
   return results.map(r => r.toJSON());
 };
+
 
 export const create = async (obj) => {
   const created = await Producto.create({
@@ -81,7 +81,7 @@ export const updateArchivo = async (id, filename) => {
 
 export const getReporte = async (preciobase) => {
   const result = await orm.query(
-    'CALL ecommerceg1.get_reporte(?)',
+    'CALL limpieza_pro.get_reporte(?)',
     { replacements: [preciobase] }
   );
   // Normaliza la forma del resultado (directo vs. anidado)

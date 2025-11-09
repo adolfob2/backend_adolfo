@@ -1,14 +1,17 @@
-import _mysql from "mysql2/promise";
+// config/db.js
+import mysql from "mysql2/promise";
+import dotenv from "dotenv";
+dotenv.config();
 
-const pool = _mysql.createPool({
-host: 'localhost',//127.0.0.1
-user: 'root',
-password: 'Mypassword',
-database: 'ecommerceg1',
-waitForConnections: true,
-connectionLimit: 8,
-queueLimit: 0,
-
+const pool = mysql.createPool({
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "root",
+  password: process.env.DB_PASSWORD || "",
+  database: process.env.DB_NAME || "limpieza_pro",
+  port: Number(process.env.DB_PORT || 3306),
+  waitForConnections: true,
+  connectionLimit: 8,
+  queueLimit: 0,
 });
 
 export default pool;
