@@ -1,3 +1,4 @@
+// Test de despliegue automático - actualización 1
 // app.js
 import express from "express";
 import path from "path";
