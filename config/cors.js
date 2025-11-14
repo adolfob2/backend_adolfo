@@ -28,11 +28,32 @@ export default cors(corsOptions);
 */
 
 // config/cors.js
-import cors from "cors";
+/*import cors from "cors";
 
 const allowedOrigin = process.env.FRONTEND_URL || "http://localhost:5173";
 
 export default cors({
   origin: allowedOrigin,
   credentials: true,
-});
+});*/
+
+import cors from "cors";
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://limpiezaproapp2.vercel.app"
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Permite peticiones del backend (sin origin) y orígenes permitidos
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    console.log("❌ CORS bloqueó:", origin);
+    callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+};
+
+export default cors(corsOptions);
